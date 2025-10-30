@@ -28,7 +28,7 @@ public class TimesViewModel extends ViewModel {
         if (!h.contains(base)) h.add(base);
         history.setValue(h);
 
-        // rebuild rows 1..10 honoring deletions
+
         Set<Integer> deleted = deletedByBase.getOrDefault(base, new HashSet<>());
         ArrayList<String> labels = new ArrayList<>();
         for (int i = 1; i <= 10; i++) {
@@ -47,11 +47,11 @@ public class TimesViewModel extends ViewModel {
         List<String> labels = new ArrayList<>(rowStrings.getValue());
         if (position < 0 || position >= labels.size()) return;
 
-        // infer multiplier from the label
-        String label = labels.get(position); // e.g., "7 × 3 = 21"
+
+        String label = labels.get(position);
         try {
             String[] leftRight = label.split("=");
-            String left = leftRight[0]; // "7 × 3 "
+            String left = leftRight[0];
             String[] baseMul = left.split("×");
             int base = Integer.parseInt(baseMul[0].trim());
             int multiplier = Integer.parseInt(baseMul[1].trim());

@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
         BottomNavigationView nav = findViewById(R.id.bottomNav);
 
-        // Build bottom-nav items with NO XML menu
+        // Build bottom-nav items
         Menu m = nav.getMenu();
         m.clear();
         m.add(0, MENU_TABLE, 0, "Table");
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         if (savedInstanceState == null) {
-            // Select first tab
+
             nav.setSelectedItemId(MENU_TABLE);
         }
     }
